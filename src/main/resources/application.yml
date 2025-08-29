@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: apigateway
+  cloud:
+    gateway:
+      routes:
+        - id: ROLE_USERmanagement
+          predicates:
+            - Path=/ROLE_USERs/**
+          uri: http://localhost:8081
+        - id: eventbooking
+          predicates:
+            - Path=/manage/**, /ROLE_USER/**
+          uri: http://localhost:8082
+
+api:
+  gateway:
+    routes:
+        - path: "/users/**"
+          roles: [ ROLE_ADMIN, ROLE_USER ]
+        - path: "/manage/seats"
+          roles: [ ROLE_ADMIN, ROLE_USER ]
+        - path: "/manage/venue"
+          roles: [ ROLE_ADMIN ]
+        - path: "/manage/shows"
+          roles: [ ROLE_ADMIN ]
+        - path: "/manage/event"
+          roles: [ ROLE_ADMIN ]
+        - path: "/user/**"
+          roles: [ ROLE_ADMIN, ROLE_USER ]
+
+secret: afafasfafafasfasfasfafacasdasfasxASFACASDFACASDFASFASFDAFASFASDAADSCSDFADCVSGCFVADXCcadwavfsfarvf
