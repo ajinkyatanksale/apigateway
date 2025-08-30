@@ -4,13 +4,13 @@ spring:
   cloud:
     gateway:
       routes:
-        - id: ROLE_USERmanagement
+        - id: usermanagement
           predicates:
-            - Path=/ROLE_USERs/**
+            - Path=/users/**
           uri: http://localhost:8081
         - id: eventbooking
           predicates:
-            - Path=/manage/**, /ROLE_USER/**
+            - Path=/manage/**, /user/**
           uri: http://localhost:8082
 
 api:
