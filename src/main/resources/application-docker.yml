@@ -21,7 +21,7 @@ api:
 
 manageuser:
   route:
-    uri: http://localhost:8081
+    uri: http://manageusers:8081
 eventmanagement:
   route:
-    uri: http://localhost:8082
+    uri: http://eventmanagement:8082
